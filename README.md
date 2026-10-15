@@ -3,18 +3,18 @@
 
 A university-level machine learning project covering supervised learning, unsupervised pattern recognition, neural networks, reinforcement learning, fairness analysis, and drift monitoring. It uses scikit-learn and PyTorch.
 
-
+<br>
 <p align="center">
   <img src="images/mathlab.png" alt="Project overview" width="85%">
 </p>
-
+<br>
 <div align="center">
   <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Python_logo_%28icon_only%29.svg" height="60" alt="Python">
   <img src="https://raw.githubusercontent.com/pytorch/pytorch/main/docs/source/_static/img/pytorch-logo-dark.svg" height="60" alt="PyTorch">
   <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" height="60" alt="scikit-learn">
 </div>
 
-
+---
 
 ```text
 Predictive-to-Deep-Learning/
