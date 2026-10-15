@@ -1,2 +1,0 @@
-# Predictive to Deep Learning
-
