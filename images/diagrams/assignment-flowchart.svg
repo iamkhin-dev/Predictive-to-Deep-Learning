@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1220" viewBox="0 0 1500 1220" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-labelledby="title description">
+  <title id="title">Machine learning assignment logic flowchart</title>
+  <desc id="description">A landscape flowchart showing dataset preparation, four assignment-part branches, generated code artifacts, and written-report responsibilities.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#79a9df" /></marker>
+    <style>
+      .bg{fill:#f5f7fa}.heading{font:700 28px Arial,sans-serif;fill:#1e2d3b}.subtitle{font:14px Arial,sans-serif;fill:#5e6d7c}
+      .label{font:700 16px Arial,sans-serif;fill:#243545}.body{font:13px Arial,sans-serif;fill:#374b5f}.small{font:12px Arial,sans-serif;fill:#536579}
+      .blue{fill:#edf3f8;stroke:#61788f;stroke-width:2;rx:8}.purple{fill:#f2eff6;stroke:#796a91;stroke-width:2;rx:8}
+      .green{fill:#edf5ef;stroke:#5a8067;stroke-width:2;rx:8}.amber{fill:#fff7e9;stroke:#9b793f;stroke-width:2;rx:8}
+      .teal{fill:#eef5f5;stroke:#5a7f82;stroke-width:2;rx:8}.red{fill:#f9eeee;stroke:#aa5a5a;stroke-width:2;rx:8}
+      .terminal{fill:#e9edf1;stroke:#6a7784;stroke-width:2}.edge{fill:none;stroke:#465564;stroke-width:2.5;marker-end:url(#arrow)}
+      .branch{fill:none;stroke:#718090;stroke-width:2}.tag{font:700 12px Arial,sans-serif;fill:#755c2b}
+    </style>
+  </defs>
+  <rect class="bg" width="1500" height="1220" />
+  <rect class="terminal" x="650" y="88" width="200" height="42" rx="21" />
+  <text class="label" x="750" y="115" text-anchor="middle">START</text>
+  <path class="edge" d="M750 130 V155" />
+  <rect class="blue" x="400" y="161" width="700" height="65" />
+  <text class="label" x="750" y="188" text-anchor="middle">Load credit-g (OpenML #31) and Fashion-MNIST (Zalando)</text>
+  <text class="small" x="750" y="210" text-anchor="middle">Record source, original dimensions, selected sample sizes, and personal seed</text>
+  <path class="edge" d="M750 226 V248" />
+  <rect class="teal" x="400" y="254" width="700" height="70" />
+  <text class="label" x="750" y="283" text-anchor="middle">EDA → missing values → dataset-specific splits</text>
+  <text class="small" x="750" y="306" text-anchor="middle">Target/sensitive distributions · descriptive statistics · correlations · train/validation/test boundaries</text>
+  <path class="edge" d="M750 324 V352" />
+  <path class="branch" d="M180 370 H1320 M180 370 V395 M560 370 V395 M940 370 V395 M1320 370 V395" />
+  <path class="edge" d="M180 370 V394 M560 370 V394 M940 370 V394 M1320 370 V394" />
+
+  <rect class="purple" x="30" y="400" width="300" height="410" />
+  <text class="label" x="180" y="435" text-anchor="middle">PART 1 · SUPERVISED</text>
+  <text class="tag" x="180" y="458" text-anchor="middle">CODE + REPORT</text>
+  <text class="body" x="180" y="500" text-anchor="middle">Impute · one-hot encode · scale</text>
+  <text class="body" x="180" y="528" text-anchor="middle">Fit preprocessing inside CV folds</text>
+  <text class="body" x="180" y="566" text-anchor="middle">8 model configurations</text>
+  <text class="body" x="180" y="594" text-anchor="middle">Stratified 5-fold GridSearchCV</text>
+  <text class="body" x="180" y="622" text-anchor="middle">Select by mean CV F1</text>
+  <text class="body" x="180" y="660" text-anchor="middle">Test: accuracy · precision · recall</text>
+  <text class="body" x="180" y="688" text-anchor="middle">F1 · confusion matrix · ROC/AUC</text>
+  <text class="body" x="180" y="726" text-anchor="middle">Tree-depth validation curve</text>
+  <text class="small" x="180" y="768" text-anchor="middle">Report: metric choice, imbalance, bias/variance</text>
+
+  <rect class="teal" x="410" y="400" width="300" height="410" />
+  <text class="label" x="560" y="435" text-anchor="middle">PART 2 · STRUCTURE</text>
+  <text class="tag" x="560" y="458" text-anchor="middle">CODE + REPORT</text>
+  <text class="body" x="560" y="500" text-anchor="middle">Cluster X_train without labels</text>
+  <text class="body" x="560" y="538" text-anchor="middle">K-means · elbow · silhouette</text>
+  <text class="body" x="560" y="576" text-anchor="middle">Choose k from silhouette</text>
+  <text class="body" x="560" y="614" text-anchor="middle">Ward dendrogram · PCA</text>
+  <text class="body" x="560" y="652" text-anchor="middle">Cumulative variance · 90% count</text>
+  <text class="body" x="560" y="690" text-anchor="middle">PCA 2D · true labels · ARI/NMI</text>
+  <text class="small" x="560" y="748" text-anchor="middle">Report: do clusters match the classes?</text>
+  <text class="small" x="560" y="770" text-anchor="middle">Quantify; do not rely on visual impression</text>
+
+  <rect class="amber" x="790" y="400" width="300" height="410" />
+  <text class="label" x="940" y="435" text-anchor="middle">PART 3 · NEURAL NETWORKS</text>
+  <text class="tag" x="940" y="458" text-anchor="middle">CODE + REPORT</text>
+  <text class="body" x="940" y="500" text-anchor="middle">Tabular MLP vs. CV-selected model</text>
+  <text class="body" x="940" y="538" text-anchor="middle">CNN · 2 conv + pooling layers</text>
+  <text class="body" x="940" y="576" text-anchor="middle">Train/validation curves every epoch</text>
+  <text class="body" x="940" y="614" text-anchor="middle">Baseline · dropout · L2/early-stop</text>
+  <text class="body" x="940" y="642" text-anchor="middle">Data augmentation</text>
+  <text class="body" x="940" y="680" text-anchor="middle">SGD-momentum vs. Adam · 3 rates</text>
+  <text class="body" x="940" y="718" text-anchor="middle">RNN vs. no-memory · held-out MSE</text>
+  <text class="small" x="940" y="770" text-anchor="middle">Report effects, overfitting, and divergence</text>
+
+  <rect class="green" x="1170" y="400" width="300" height="410" />
+  <text class="label" x="1320" y="435" text-anchor="middle">PART 4 · RL + PRODUCTION</text>
+  <text class="tag" x="1320" y="458" text-anchor="middle">CODE + REPORT</text>
+  <text class="body" x="1320" y="500" text-anchor="middle">Tabular Q-learning grid</text>
+  <text class="body" x="1320" y="538" text-anchor="middle">Obstacles · terminal state</text>
+  <text class="body" x="1320" y="576" text-anchor="middle">Reward · epsilon · final policy</text>
+  <text class="body" x="1320" y="620" text-anchor="middle">Fairness on sensitive subgroups</text>
+  <text class="body" x="1320" y="658" text-anchor="middle">Gaps · numeric/categorical PSI</text>
+  <text class="body" x="1320" y="686" text-anchor="middle">Prediction and performance drift</text>
+  <text class="small" x="1320" y="748" text-anchor="middle">Report mitigation cost and live alerts</text>
+  <text class="small" x="1320" y="770" text-anchor="middle">Current drift is a train/test simulation</text>
+
+  <path class="branch" d="M180 810 V850 H750 M560 810 V850 M940 810 V850 M1320 810 V850 H750" />
+  <path class="edge" d="M750 850 V875" />
+  <rect class="blue" x="260" y="881" width="980" height="90" />
+  <text class="label" x="750" y="916" text-anchor="middle">CODE-GENERATED EVIDENCE</text>
+  <text class="body" x="750" y="945" text-anchor="middle">EDA JSON · metrics JSON · figures · GUI dashboard</text>
+  <path class="edge" d="M750 971 V1000" />
+  <rect class="amber" x="160" y="1006" width="1180" height="125" />
+  <text class="label" x="750" y="1042" text-anchor="middle">WRITTEN REPORT — NOT GENERATED BY THE CODE</text>
+  <text class="body" x="750" y="1072" text-anchor="middle">Explain choices · discuss metric suitability and bias/variance · interpret clusters and overfitting</text>
+  <text class="body" x="750" y="1098" text-anchor="middle">Discuss fairness mitigation cost · define production monitoring · write the required two-page process discussion</text>
+  <path class="edge" d="M750 1131 V1160" />
+  <rect class="terminal" x="650" y="1166" width="200" height="42" rx="21" />
+  <text class="label" x="750" y="1193" text-anchor="middle">END</text>
+</svg>

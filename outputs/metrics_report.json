@@ -1,0 +1,282 @@
+{
+  "supervised_models_comparison": {
+    "DecisionTree": {
+      "best_cv_params": {
+        "clf__max_depth": null
+      },
+      "cv_best_f1": 0.4369,
+      "accuracy": 0.685,
+      "precision": 0.4746,
+      "recall": 0.4667,
+      "f1": 0.4706,
+      "roc_auc": 0.6226,
+      "confusion_matrix": [
+        [
+          109,
+          31
+        ],
+        [
+          32,
+          28
+        ]
+      ]
+    },
+    "KNN": {
+      "best_cv_params": {
+        "clf__n_neighbors": 3
+      },
+      "cv_best_f1": 0.4128,
+      "accuracy": 0.715,
+      "precision": 0.5349,
+      "recall": 0.3833,
+      "f1": 0.4466,
+      "roc_auc": 0.7136,
+      "confusion_matrix": [
+        [
+          120,
+          20
+        ],
+        [
+          37,
+          23
+        ]
+      ]
+    },
+    "LogisticRegression": {
+      "best_cv_params": {
+        "clf__C": 1.0
+      },
+      "cv_best_f1": 0.5181,
+      "accuracy": 0.785,
+      "precision": 0.6809,
+      "recall": 0.5333,
+      "f1": 0.5981,
+      "roc_auc": 0.8149,
+      "confusion_matrix": [
+        [
+          125,
+          15
+        ],
+        [
+          28,
+          32
+        ]
+      ]
+    },
+    "GaussianNB": {
+      "best_cv_params": {},
+      "cv_best_f1": 0.5197,
+      "accuracy": 0.695,
+      "precision": 0.4944,
+      "recall": 0.7333,
+      "f1": 0.5906,
+      "roc_auc": 0.7727,
+      "confusion_matrix": [
+        [
+          95,
+          45
+        ],
+        [
+          16,
+          44
+        ]
+      ]
+    },
+    "SVM_RBF": {
+      "best_cv_params": {
+        "clf__C": 10.0,
+        "clf__gamma": "scale"
+      },
+      "cv_best_f1": 0.5291,
+      "accuracy": 0.75,
+      "precision": 0.5862,
+      "recall": 0.5667,
+      "f1": 0.5763,
+      "roc_auc": 0.8013,
+      "confusion_matrix": [
+        [
+          116,
+          24
+        ],
+        [
+          26,
+          34
+        ]
+      ]
+    },
+    "SVM_Linear": {
+      "best_cv_params": {
+        "clf__C": 1.0
+      },
+      "cv_best_f1": 0.5295,
+      "accuracy": 0.77,
+      "precision": 0.64,
+      "recall": 0.5333,
+      "f1": 0.5818,
+      "roc_auc": 0.8121,
+      "confusion_matrix": [
+        [
+          122,
+          18
+        ],
+        [
+          28,
+          32
+        ]
+      ]
+    },
+    "RandomForest": {
+      "best_cv_params": {
+        "clf__max_depth": 10,
+        "clf__n_estimators": 100
+      },
+      "cv_best_f1": 0.4401,
+      "accuracy": 0.775,
+      "precision": 0.7419,
+      "recall": 0.3833,
+      "f1": 0.5055,
+      "roc_auc": 0.8102,
+      "confusion_matrix": [
+        [
+          132,
+          8
+        ],
+        [
+          37,
+          23
+        ]
+      ]
+    },
+    "GradientBoosting": {
+      "best_cv_params": {
+        "clf__learning_rate": 0.1,
+        "clf__n_estimators": 100
+      },
+      "cv_best_f1": 0.5013,
+      "accuracy": 0.785,
+      "precision": 0.6889,
+      "recall": 0.5167,
+      "f1": 0.5905,
+      "roc_auc": 0.7973,
+      "confusion_matrix": [
+        [
+          126,
+          14
+        ],
+        [
+          29,
+          31
+        ]
+      ]
+    }
+  },
+  "best_classic_model": {
+    "name": "SVM_Linear",
+    "f1": 0.5818,
+    "accuracy": 0.77,
+    "roc_auc": 0.8121
+  },
+  "mlp_tabular_model": {
+    "accuracy": 0.72,
+    "precision": 0.5312,
+    "recall": 0.5667,
+    "f1": 0.5484,
+    "roc_auc": 0.7525,
+    "confusion_matrix": [
+      [
+        110,
+        30
+      ],
+      [
+        26,
+        34
+      ]
+    ]
+  },
+  "cnn_and_sequences": {
+    "cnn_test_accuracy": {
+      "Baseline": 0.84,
+      "Dropout": 0.81,
+      "L2_EarlyStop": 0.81,
+      "DataAugmentation": 0.772
+    },
+    "sequence_mse_comparison": {
+      "rnn_mse": 0.0659,
+      "memoryless_mse": 4.6015
+    }
+  },
+  "unsupervised_metrics": {
+    "best_k": 2,
+    "n_components_90_var": 26,
+    "ari": 0.0272,
+    "nmi": 0.0049
+  },
+  "fairness_audit": {
+    "female div/dep/mar": {
+      "size": 72,
+      "accuracy": 0.6944,
+      "recall": 0.56,
+      "selection_rate": 0.3472
+    },
+    "male div/sep": {
+      "size": 6,
+      "accuracy": 0.8333,
+      "recall": 1.0,
+      "selection_rate": 0.6667
+    },
+    "male single": {
+      "size": 100,
+      "accuracy": 0.8,
+      "recall": 0.4483,
+      "selection_rate": 0.17
+    },
+    "male mar/wid": {
+      "size": 22,
+      "accuracy": 0.8636,
+      "recall": 0.6667,
+      "selection_rate": 0.1818
+    },
+    "gaps": {
+      "recall_gap": 0.5517,
+      "selection_rate_gap": 0.4967,
+      "accuracy_gap": 0.1692,
+      "disparate_impact_ratio": 0.255
+    }
+  },
+  "drift_summary": {
+    "numeric_feature_psi": {
+      "duration": 0.08628830999462875,
+      "credit_amount": 0.06841176436166196,
+      "installment_commitment": 0.037876710913943665,
+      "residence_since": 0.024534575060684218,
+      "age": 0.0528844132127079,
+      "existing_credits": 0.02263822987104612,
+      "num_dependents": 0.0012177850508347796
+    },
+    "categorical_feature_psi": {
+      "checking_status": 0.007062456379061984,
+      "credit_history": 0.028985164832390983,
+      "purpose": 0.2812900318897401,
+      "savings_status": 0.04182184078199785,
+      "employment": 0.036220654048018344,
+      "personal_status": 0.03902016012911311,
+      "other_parties": 0.00746859418613021,
+      "property_magnitude": 0.01499043278037362,
+      "other_payment_plans": 0.0021312163638279613,
+      "housing": 0.0013053486774511163,
+      "job": 0.002567505619069389,
+      "own_telephone": 0.010005608073311615,
+      "foreign_worker": 0.0026173134925717954
+    },
+    "prediction_psi": 0.0005406724104245009,
+    "performance_drift": {
+      "reference_accuracy": 0.785,
+      "current_accuracy": 0.77,
+      "accuracy_change": -0.015,
+      "reference_f1": 0.6019,
+      "current_f1": 0.5818,
+      "f1_change": -0.02
+    }
+  },
+  "execution_time_s": 70.44
+}

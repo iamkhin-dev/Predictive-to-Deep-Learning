@@ -1,0 +1,455 @@
+{
+  "dataset": {
+    "source": {
+      "provider": "OpenML",
+      "dataset_id": "31",
+      "dataset_name": "credit-g",
+      "dataset_url": "https://www.openml.org/d/31",
+      "original_source_url": "https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data)"
+    },
+    "shape": [
+      1000,
+      21
+    ],
+    "sample_count": 1000,
+    "feature_count": 20,
+    "class_count": 2,
+    "target_column": "class",
+    "sensitive_attribute": "personal_status",
+    "description": "**Author**: Dr. Hans Hofmann  \n**Source**: [UCI](https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data)) - 1994    \n**Please cite**: [UCI](https://archive.ics.uci.edu/ml/citation_policy.html)\n\n**German Credit dataset**  \nThis dataset classifies people described by a set of attributes as good or bad credit risks.\n\nThis dataset comes with a cost matrix: \n``` \nGood  Bad (predicted)  \nGood   0    1   (actual)  \nBad    5    0  \n```\n\nIt is worse to class a customer as good when they are bad (5), than it is to class a customer as bad when they are good (1).  \n\n### Attribute description  \n\n1. Status of existing checking account, in Deutsche Mark.  \n2. Duration in months  \n3. Credit history (credits taken, paid back duly, delays, critical accounts)  \n4. Purpose of the credit (car, television,...)  \n5. Credit amount  \n6. Status of savings account/bonds, in Deutsche Mark.  \n7. Present employment, in number of years.  \n8. Installment rate in percentage of disposable income  \n9. Personal status (married, single,...) and sex  \n10. Other debtors / guarantors  \n11. Present residence since X years  \n12. Property (e.g. real estate)  \n13. Age in years  \n14. Other installment plans (banks, stores)  \n15. Housing (rent, own,...)  \n16. Number of existing credits at this bank  \n17. Job  \n18. Number of people being liable to provide maintenance for  \n19. Telephone (yes,no)  \n20. Foreign worker (yes,no)\n\nDownloaded from openml.org."
+  },
+  "split_shapes": {
+    "X_train": [
+      800,
+      20
+    ],
+    "X_test": [
+      200,
+      20
+    ],
+    "y_train": [
+      800
+    ],
+    "y_test": [
+      200
+    ]
+  },
+  "missing_values": {
+    "checking_status": 0,
+    "duration": 0,
+    "credit_history": 0,
+    "purpose": 0,
+    "credit_amount": 0,
+    "savings_status": 0,
+    "employment": 0,
+    "installment_commitment": 0,
+    "personal_status": 0,
+    "other_parties": 0,
+    "residence_since": 0,
+    "property_magnitude": 0,
+    "age": 0,
+    "other_payment_plans": 0,
+    "housing": 0,
+    "existing_credits": 0,
+    "job": 0,
+    "num_dependents": 0,
+    "own_telephone": 0,
+    "foreign_worker": 0,
+    "class": 0
+  },
+  "descriptive_statistics": {
+    "checking_status": {
+      "count": 1000,
+      "unique": 4,
+      "top": "no checking",
+      "freq": 394,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "duration": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 20.903,
+      "std": 12.058814452756375,
+      "min": 4.0,
+      "25%": 12.0,
+      "50%": 18.0,
+      "75%": 24.0,
+      "max": 72.0
+    },
+    "credit_history": {
+      "count": 1000,
+      "unique": 5,
+      "top": "existing paid",
+      "freq": 530,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "purpose": {
+      "count": 1000,
+      "unique": 10,
+      "top": "radio/tv",
+      "freq": 280,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "credit_amount": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 3271.258,
+      "std": 2822.7368759604406,
+      "min": 250.0,
+      "25%": 1365.5,
+      "50%": 2319.5,
+      "75%": 3972.25,
+      "max": 18424.0
+    },
+    "savings_status": {
+      "count": 1000,
+      "unique": 5,
+      "top": "<100",
+      "freq": 603,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "employment": {
+      "count": 1000,
+      "unique": 5,
+      "top": "1<=X<4",
+      "freq": 339,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "installment_commitment": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 2.973,
+      "std": 1.1187146743126786,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 4.0
+    },
+    "personal_status": {
+      "count": 1000,
+      "unique": 4,
+      "top": "male single",
+      "freq": 548,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "other_parties": {
+      "count": 1000,
+      "unique": 3,
+      "top": "none",
+      "freq": 907,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "residence_since": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 2.845,
+      "std": 1.1037178956568536,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 4.0,
+      "max": 4.0
+    },
+    "property_magnitude": {
+      "count": 1000,
+      "unique": 4,
+      "top": "car",
+      "freq": 332,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "age": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 35.546,
+      "std": 11.375468574317512,
+      "min": 19.0,
+      "25%": 27.0,
+      "50%": 33.0,
+      "75%": 42.0,
+      "max": 75.0
+    },
+    "other_payment_plans": {
+      "count": 1000,
+      "unique": 3,
+      "top": "none",
+      "freq": 814,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "housing": {
+      "count": 1000,
+      "unique": 3,
+      "top": "own",
+      "freq": 713,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "existing_credits": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 1.407,
+      "std": 0.5776544682461002,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 2.0,
+      "max": 4.0
+    },
+    "job": {
+      "count": 1000,
+      "unique": 4,
+      "top": "skilled",
+      "freq": 630,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "num_dependents": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 1.155,
+      "std": 0.36208577175319395,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 1.0,
+      "max": 2.0
+    },
+    "own_telephone": {
+      "count": 1000,
+      "unique": 2,
+      "top": "none",
+      "freq": 596,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "foreign_worker": {
+      "count": 1000,
+      "unique": 2,
+      "top": "yes",
+      "freq": 963,
+      "mean": null,
+      "std": null,
+      "min": null,
+      "25%": null,
+      "50%": null,
+      "75%": null,
+      "max": null
+    },
+    "class": {
+      "count": 1000.0,
+      "unique": null,
+      "top": null,
+      "freq": null,
+      "mean": 0.3,
+      "std": 0.4584868702702512,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 1.0,
+      "max": 1.0
+    }
+  },
+  "target_distribution": {
+    "0": 700,
+    "1": 300
+  },
+  "sensitive_attribute_distribution": {
+    "male single": 548,
+    "female div/dep/mar": 310,
+    "male mar/wid": 92,
+    "male div/sep": 50
+  },
+  "numeric_correlations": {
+    "duration": {
+      "duration": 1.0,
+      "credit_amount": 0.625,
+      "installment_commitment": 0.0747,
+      "residence_since": 0.0341,
+      "age": -0.0361,
+      "existing_credits": -0.0113,
+      "num_dependents": -0.0238,
+      "class": 0.2149
+    },
+    "credit_amount": {
+      "duration": 0.625,
+      "credit_amount": 1.0,
+      "installment_commitment": -0.2713,
+      "residence_since": 0.0289,
+      "age": 0.0327,
+      "existing_credits": 0.0208,
+      "num_dependents": 0.0171,
+      "class": 0.1547
+    },
+    "installment_commitment": {
+      "duration": 0.0747,
+      "credit_amount": -0.2713,
+      "installment_commitment": 1.0,
+      "residence_since": 0.0493,
+      "age": 0.0583,
+      "existing_credits": 0.0217,
+      "num_dependents": -0.0712,
+      "class": 0.0724
+    },
+    "residence_since": {
+      "duration": 0.0341,
+      "credit_amount": 0.0289,
+      "installment_commitment": 0.0493,
+      "residence_since": 1.0,
+      "age": 0.2664,
+      "existing_credits": 0.0896,
+      "num_dependents": 0.0426,
+      "class": 0.003
+    },
+    "age": {
+      "duration": -0.0361,
+      "credit_amount": 0.0327,
+      "installment_commitment": 0.0583,
+      "residence_since": 0.2664,
+      "age": 1.0,
+      "existing_credits": 0.1493,
+      "num_dependents": 0.1182,
+      "class": -0.0911
+    },
+    "existing_credits": {
+      "duration": -0.0113,
+      "credit_amount": 0.0208,
+      "installment_commitment": 0.0217,
+      "residence_since": 0.0896,
+      "age": 0.1493,
+      "existing_credits": 1.0,
+      "num_dependents": 0.1097,
+      "class": -0.0457
+    },
+    "num_dependents": {
+      "duration": -0.0238,
+      "credit_amount": 0.0171,
+      "installment_commitment": -0.0712,
+      "residence_since": 0.0426,
+      "age": 0.1182,
+      "existing_credits": 0.1097,
+      "num_dependents": 1.0,
+      "class": -0.003
+    },
+    "class": {
+      "duration": 0.2149,
+      "credit_amount": 0.1547,
+      "installment_commitment": 0.0724,
+      "residence_since": 0.003,
+      "age": -0.0911,
+      "existing_credits": -0.0457,
+      "num_dependents": -0.003,
+      "class": 1.0
+    }
+  },
+  "image_dataset": {
+    "source": "torchvision.datasets.FashionMNIST",
+    "original_source": "Fashion-MNIST",
+    "source_url": "https://github.com/zalandoresearch/fashion-mnist",
+    "original_train_samples": 60000,
+    "original_test_samples": 10000,
+    "image_shape": [
+      28,
+      28
+    ],
+    "class_count": 10,
+    "classes": [
+      "T-shirt/top",
+      "Trouser",
+      "Pullover",
+      "Dress",
+      "Coat",
+      "Sandal",
+      "Shirt",
+      "Sneaker",
+      "Bag",
+      "Ankle boot"
+    ],
+    "selected_train_samples": 2000,
+    "train_samples_used": 1600,
+    "validation_samples_used": 400,
+    "test_samples_used": 500
+  }
+}

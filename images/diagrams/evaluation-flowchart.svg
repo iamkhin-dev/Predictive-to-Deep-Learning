@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1320" viewBox="0 0 1400 1320" style="width:100%;max-width:100%;height:auto;display:block" role="img" aria-labelledby="title description">
+  <title id="title">Train, validation, and test decision flowchart</title>
+  <desc id="description">Light academic flowchart with separate tabular, CNN, and sequence lanes. It keeps test data out of selection, routes CNN validation through epoch and early-stopping decisions, and evaluates held-out data only at the end.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#4b5968" /></marker>
+    <style>
+      .bg{fill:#f5f7fa}.heading{font:700 26px Arial,sans-serif;fill:#263645}.subtitle{font:14px Arial,sans-serif;fill:#596a7a}
+      .lane{fill:#fff;stroke:#c8d0d8;stroke-width:1.5;stroke-dasharray:1 5;stroke-linecap:round;rx:8}.label{font:700 14px Arial,sans-serif;fill:#263645}
+      .body{font:12px Arial,sans-serif;fill:#405365}.small{font:11px Arial,sans-serif;fill:#546879}
+      .data{fill:#eef3f7;stroke:#687c8e;stroke-width:2}.train{fill:#edf4ee;stroke:#63816a;stroke-width:2;rx:6}
+      .validation{fill:#fff7e8;stroke:#a1864d;stroke-width:2;rx:6}.test{fill:#f8eeee;stroke:#a76565;stroke-width:2;rx:6}
+      .decision{fill:#fff8e7;stroke:#9a7b3e;stroke-width:2}.process{fill:#eef3f7;stroke:#687c8e;stroke-width:2;rx:6}
+      .edge{fill:none;stroke:#4b5968;stroke-width:2;marker-end:url(#arrow)}.edgeLabel{font:700 11px Arial,sans-serif;fill:#435361}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="1320" />
+
+  <rect class="lane" x="30" y="90" width="1340" height="290" />
+  <text class="label" x="55" y="120">PART 1 · TABULAR CLASSIFICATION</text>
+  <polygon class="data" points="50,190 185,190 210,240 75,240" />
+  <text class="label" x="130" y="220" text-anchor="middle">credit-g</text>
+  <text class="small" x="130" y="237" text-anchor="middle">1,000 rows</text>
+  <path class="edge" d="M210 215 H245" />
+  <path class="decision" d="M310 170 L375 215 L310 260 L245 215 Z" />
+  <text class="label" x="310" y="211" text-anchor="middle">Stratified</text>
+  <text class="small" x="310" y="229" text-anchor="middle">80/20 split</text>
+  <path class="edge" d="M310 170 V150 H390" />
+  <text class="edgeLabel" x="345" y="143">TRAIN 80%</text>
+  <rect class="train" x="400" y="120" width="300" height="72" />
+  <text class="label" x="550" y="149" text-anchor="middle">Preprocess inside each CV fold</text>
+  <text class="body" x="550" y="174" text-anchor="middle">Impute · encode · scale</text>
+  <path class="edge" d="M700 156 H735" />
+  <rect class="train" x="745" y="120" width="215" height="72" />
+  <text class="label" x="852" y="149" text-anchor="middle">Stratified 5-fold CV</text>
+  <text class="body" x="852" y="174" text-anchor="middle">Tune by F1</text>
+  <path class="edge" d="M960 156 H985" />
+  <rect class="train" x="995" y="120" width="210" height="72" />
+  <text class="label" x="1100" y="149" text-anchor="middle">Select by mean CV F1</text>
+  <text class="body" x="1100" y="174" text-anchor="middle">Never by test score</text>
+  <path class="edge" d="M1205 156 H1220" />
+  <path class="decision" d="M1280 120 L1340 156 L1280 192 L1220 156 Z" />
+  <text class="small" x="1280" y="152" text-anchor="middle">Test used</text>
+  <text class="small" x="1280" y="167" text-anchor="middle">for choice?</text>
+  <path class="edge" d="M1340 156 H1360 V240 H1350" />
+  <text class="edgeLabel" x="1343" y="143">YES</text>
+  <path class="edge" d="M1280 192 V305 H1340" />
+  <text class="edgeLabel" x="1290" y="218">NO</text>
+  <rect class="test" x="1140" y="218" width="210" height="45" />
+  <text class="label" x="1245" y="246" text-anchor="middle">INVALID: TEST LEAKAGE</text>
+  <rect class="test" x="1090" y="270" width="250" height="70" />
+  <text class="label" x="1215" y="298" text-anchor="middle">Final test metrics</text>
+  <text class="body" x="1215" y="323" text-anchor="middle">Accuracy · P/R/F1 · CM · ROC/AUC</text>
+  <path class="edge" d="M310 260 V305 H390" />
+  <text class="edgeLabel" x="318" y="285">TEST 20%</text>
+  <rect class="test" x="400" y="270" width="300" height="70" />
+  <text class="label" x="550" y="298" text-anchor="middle">Hold test split untouched</text>
+  <text class="small" x="550" y="323" text-anchor="middle">Until CV selects the final model</text>
+  <path class="edge" d="M700 305 H1090" />
+
+  <rect class="lane" x="30" y="395" width="1340" height="485" />
+  <text class="label" x="55" y="425">PART 3 · FASHION-MNIST CNN</text>
+  <polygon class="data" points="50,560 185,560 210,610 75,610" />
+  <text class="label" x="130" y="583" text-anchor="middle">Train subset</text>
+  <text class="small" x="130" y="600" text-anchor="middle">2,000 images</text>
+  <path class="edge" d="M210 585 H245" />
+  <path class="decision" d="M310 540 L375 585 L310 630 L245 585 Z" />
+  <text class="label" x="310" y="581" text-anchor="middle">Split</text>
+  <text class="small" x="310" y="599" text-anchor="middle">1,600 / 400</text>
+  <path class="edge" d="M310 540 V485 H390" />
+  <text class="edgeLabel" x="337" y="477">TRAIN</text>
+  <rect class="train" x="400" y="450" width="280" height="75" />
+  <text class="label" x="540" y="480" text-anchor="middle">Train one epoch</text>
+  <text class="body" x="540" y="505" text-anchor="middle">Record training loss and accuracy</text>
+  <path class="edge" d="M540 525 V585" />
+  <path class="edge" d="M310 630 V650 H390" />
+  <text class="edgeLabel" x="318" y="644">VALIDATION</text>
+  <rect class="validation" x="400" y="585" width="280" height="78" />
+  <text class="label" x="540" y="616" text-anchor="middle">Validate after each epoch</text>
+  <text class="body" x="540" y="641" text-anchor="middle">Record validation loss and accuracy</text>
+  <path class="edge" d="M680 624 H715" />
+  <path class="decision" d="M785 580 L855 624 L785 668 L715 624 Z" />
+  <text class="label" x="785" y="620" text-anchor="middle">L2 patience</text>
+  <text class="small" x="785" y="637" text-anchor="middle">reached?</text>
+  <path class="edge" d="M855 624 H895" />
+  <text class="edgeLabel" x="860" y="611">YES</text>
+  <rect class="validation" x="905" y="585" width="250" height="78" />
+  <text class="label" x="1030" y="616" text-anchor="middle">Restore best L2 checkpoint</text>
+  <text class="small" x="1030" y="641" text-anchor="middle">Only this configuration restores</text>
+  <path class="edge" d="M785 668 V715 H880" />
+  <text class="edgeLabel" x="795" y="694">NO</text>
+  <path class="decision" d="M950 675 L1020 715 L950 755 L880 715 Z" />
+  <text class="small" x="950" y="711" text-anchor="middle">10 epochs</text>
+  <text class="small" x="950" y="726" text-anchor="middle">complete?</text>
+  <path class="edge" d="M880 715 H820 V488 H680" />
+  <text class="edgeLabel" x="822" y="702">NO · NEXT EPOCH</text>
+  <path class="edge" d="M1020 715 H1060" />
+  <text class="edgeLabel" x="1022" y="702">YES</text>
+  <rect class="process" x="1070" y="680" width="250" height="70" />
+  <text class="label" x="1195" y="708" text-anchor="middle">Finalize remaining models</text>
+  <text class="small" x="1195" y="732" text-anchor="middle">Baseline, dropout, augmentation: last epoch</text>
+  <polygon class="data" points="70,760 245,760 270,810 95,810" />
+  <text class="label" x="170" y="783" text-anchor="middle">Official test split</text>
+  <text class="small" x="170" y="800" text-anchor="middle">500 images · held out</text>
+  <rect class="test" x="1000" y="785" width="340" height="70" />
+  <text class="label" x="1170" y="814" text-anchor="middle">Final CNN test accuracy</text>
+  <text class="body" x="1170" y="839" text-anchor="middle">Evaluate once on the official test subset</text>
+  <path class="edge" d="M1030 663 V785" />
+  <path class="edge" d="M1195 750 V785" />
+  <path class="edge" d="M270 785 H1000" />
+
+  <rect class="lane" x="30" y="900" width="1340" height="270" />
+  <text class="label" x="55" y="930">PART 3 · SYNTHETIC SEQUENCE BENCHMARK</text>
+  <polygon class="data" points="50,990 185,990 210,1040 75,1040" />
+  <text class="label" x="130" y="1013" text-anchor="middle">800 generated</text>
+  <text class="small" x="130" y="1030" text-anchor="middle">length-15 sequences</text>
+  <path class="edge" d="M210 1015 H245" />
+  <path class="decision" d="M310 970 L375 1015 L310 1060 L245 1015 Z" />
+  <text class="label" x="310" y="1011" text-anchor="middle">80/20</text>
+  <text class="small" x="310" y="1029" text-anchor="middle">split</text>
+  <path class="edge" d="M375 1015 H410 V980 H440" />
+  <rect class="train" x="450" y="945" width="270" height="70" />
+  <text class="label" x="585" y="974" text-anchor="middle">Train RNN on train split</text>
+  <text class="body" x="585" y="998" text-anchor="middle">No held-out samples used for fitting</text>
+  <path class="edge" d="M375 1015 H410 V1090 H440" />
+  <rect class="train" x="450" y="1055" width="270" height="70" />
+  <text class="label" x="585" y="1084" text-anchor="middle">Train memoryless baseline</text>
+  <text class="body" x="585" y="1108" text-anchor="middle">Same training split</text>
+  <path class="edge" d="M720 980 H790 V1035 H820" />
+  <path class="edge" d="M720 1090 H790 V1035 H820" />
+  <rect class="test" x="830" y="1000" width="400" height="70" />
+  <text class="label" x="1030" y="1029" text-anchor="middle">Compare held-out test MSE</text>
+  <text class="body" x="1030" y="1053" text-anchor="middle">RNN vs. memoryless model</text>
+</svg>
