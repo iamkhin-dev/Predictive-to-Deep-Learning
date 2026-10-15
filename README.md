@@ -1,7 +1,7 @@
 
 # From Predictive Modeling to Deep Learning
 
-A university-level machine learning project covering supervised learning, unsupervised pattern recognition, neural networks, reinforcement learning, fairness analysis, and drift monitoring. It uses scikit-learn and PyTorch.
+A university machine learning project covering supervised learning, unsupervised pattern recognition, neural networks, reinforcement learning, fairness analysis, and drift monitoring. It uses scikit-learn and PyTorch.
 
 <br>
 <p align="center">
