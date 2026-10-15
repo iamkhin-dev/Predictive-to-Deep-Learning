@@ -23,9 +23,10 @@ Predictive-to-Deep-Learning/
 ├── requirements.txt
 ├── data/
 ├── images/
-│   └── diagrams/
-│       ├── assignment-flowchart.svg
-│       └── evaluation-flowchart.svg
+│   ├── diagrams/
+│   │   ├── assignment-flowchart.svg
+│   │   └── evaluation-flowchart.svg
+│   └── mathlab.png
 ├── outputs/
 │   ├── figures/
 │   └── models/
