@@ -44,7 +44,7 @@ Predictive-to-Deep-Learning/
 Use a [Python 3.14](https://www.python.org/downloads/release/python-3140/)+.
 
 ```powershell
-git clone https://github.com/iamkhin-dev/predictive-to-deep-learning
+git clone https://github.com/iamkhin-dev/predictive-to-deep-learning.git
 cd Predictive-to-Deep-Learning
 ```
 Install `requirements.txt`
